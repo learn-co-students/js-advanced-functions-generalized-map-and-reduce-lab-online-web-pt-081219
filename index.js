@@ -7,6 +7,7 @@ function map(sourceArray,fun) {
     return newSource;
 }
 
+//REDUCE
 function reduce(sourceArray, fun, startingPoint) {
     let result = (!!startingPoint) ? startingPoint : sourceArray[0];
     let i = (!!startingPoint) ? 0 : 1;
