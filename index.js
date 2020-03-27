@@ -7,7 +7,11 @@ function map(sourceArray,fun) {
     return newSource;
 }
 
-function reduce(sourceArray, fun, startingPoint = 0) {
-    sourceArray.forEach(element => startingPoint = fun(element, startingPoint));
-    return startingPoint;
+function reduce(sourceArray, fun, startingPoint) {
+    let result = (!!startingPoint) ? startingPoint : sourceArray[0];
+    let i = (!!startingPoint) ? 0 : 1;
+    for(i; i < sourceArray.length; i++) {
+        result = fun(sourceArray[i], result);
+    }
+    return result;
 }
